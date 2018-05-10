@@ -10,7 +10,8 @@
 	
 	
 代码示例：
-
+<br>
+```Java
 if (listDialog == null) {
             listDialog = new ListDialog.Builder(this)
                     .setDatas(new String[]{"默认", "从上到下", "从下到上", "由高到低", "由低到高"})
@@ -38,5 +39,6 @@ if (listDialog == null) {
                     .build();
         }
         listDialog.show();
+```
 
 
