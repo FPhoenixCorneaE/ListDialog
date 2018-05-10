@@ -10,8 +10,7 @@
 	
 	
 代码示例：
-
-				if (listDialog == null) {
+		if (listDialog == null) {
                     listDialog = new ListDialog.Builder(this)
                             .setDatas(new String[]{"默认", "从上到下", "从下到上", "由高到低", "由低到高"})
 //                            .setDialogWidth(ViewUtils.dp2px(this,300))
