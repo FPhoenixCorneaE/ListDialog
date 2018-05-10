@@ -1,17 +1,39 @@
-# ListDialog
-列表弹窗
+package com.wkz.listdialog;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-特性：
+import java.util.List;
 
-	一行代码设置弹窗重力位置、宽高、背景、圆角、分割线、字体大小、选中与非选中颜色、进入退出动画、点击监听等；
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button mButton;
+    private ListDialog listDialog;
 
-	
-	
-代码示例：
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initView();
+    }
 
-				if (listDialog == null) {
+    private void initView() {
+        mButton = (Button) findViewById(R.id.button);
+        mButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button:
+                if (listDialog == null) {
                     listDialog = new ListDialog.Builder(this)
                             .setDatas(new String[]{"默认", "从上到下", "从下到上", "由高到低", "由低到高"})
 //                            .setDialogWidth(ViewUtils.dp2px(this,300))
@@ -38,5 +60,9 @@
                             .build();
                 }
                 listDialog.show();
-
-
+                break;
+            default:
+                break;
+        }
+    }
+}
